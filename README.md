@@ -1,14 +1,14 @@
 # CertifyKit
 CertifyKit is a fork of [Certify](https://github.com/GhostPack/Certify) with following handy functions in addition:
 
-- THEFT4 - Search certificate file in folder recursively or search certificate in certificate stores
-- THEFT1/DPERSIST1 - Export certificate or golden certificate
-- ESC1 - Create machine account
-- ESC4 - Alter template to Smart Card Authen template
-- ESC7 - Issue pending or deleted certificate request
-- ESC9/10 - Alter dNSHostName of a machine account or alter userPrincipalName of a user account
-- Shadow Credential attack
-- Account persistence with altSecurityIdentities
+- [THEFT4](https://github.com/Hagrid29/CertifyKit#theft4---theft-of-existing-certificates-via-filedirectory-triage) - Search certificate file in folder recursively or search certificate in certificate stores
+- [THEFT1](https://github.com/Hagrid29/CertifyKit#theft1---export-certificate-using-windows-crypto-apis)/[DPERSIST1](https://github.com/Hagrid29/CertifyKit#dpersist1---golden-certificate) - Export certificate or golden certificate
+- [ESC1](https://github.com/Hagrid29/CertifyKit#esc1---misconfigured-certificate-templates-machine-context) - Create machine account
+- [ESC4](https://github.com/Hagrid29/CertifyKit#esc4---vulnerable-certificate-template-access-control) - Alter template to Smart Card Authen template
+- [ESC7](https://github.com/Hagrid29/CertifyKit#esc7---vulnerable-certificate-authority-access-control) - Issue pending or deleted certificate request
+- [ESC9](https://github.com/Hagrid29/CertifyKit#esc9---ct_flag_no_security_extension)/[ESC10](https://github.com/Hagrid29/CertifyKit#esc10---certificate-mappings-after-restoring-old-value-that-before-patch) - Alter dNSHostName of a machine account or alter userPrincipalName of a user/machine account
+- [MISC](https://github.com/Hagrid29/CertifyKit#misc---shadow-credential) - Shadow Credential attack
+- [MISC](https://github.com/Hagrid29/CertifyKit#misc---account-persistence-with-altsecurityidentities) - Account persistence with altSecurityIdentities
 
 ## Usage
 
